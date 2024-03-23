@@ -1,0 +1,85 @@
+﻿@model List<Book>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    
+    body {
+        background-color: rgb(12, 50, 12);
+        font-family: 'Palatino Linotype'
+    }
+
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1.3em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+        .content-table thead tr {
+            color: rgb(12, 50, 12);
+            background-color: rgb(255, 255, 153);
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid rgb(255, 255, 153);
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid rgb(12, 50, 12);
+        }
+
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: rgb(255, 255, 153);
+        }
+
+        #lib-h1 {
+            color: rgb(255, 255, 153);
+            text-align: center;
+            font-size: 5em;
+        }
+
+
+</style>
+
+<h1 id="lib-h1"><i><b>Our Library!</b></i></h1>
+
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model)
+        {
+            <tr class ="active-row">
+                <td>@book.Title</td>
+                <td>@book.Price$</td>
+                <td>@book.Author</td>
+                <td>@book.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
