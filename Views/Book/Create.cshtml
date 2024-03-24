@@ -1,4 +1,6 @@
-﻿@*
+﻿@model Book
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -94,14 +96,14 @@
 <h1 style="color: rgb(255, 255, 153)"><i><b>Add your new book!</b></i></h1>
 <br/>
 
-<form>
-    <label class="label" for="input">Title</label>
-    <input class="input" type="text" id="input"><br />
-    <label class="label" for="input">Author</label>
-    <input class="input" type="text" id="input"><br />
-    <label class="label" for="input">Price</label>
-    <input class="input" type="text" id="input"><br />
-    <label class="label" for="input">Description</label>
-    <input class="input" type="text" id="input"><br />
+<form method="post" asp-action="Create">
+    <label asp-for="Title" class="label" for="input">Title</label>
+    <input asp-for="Title" class="input" type="text" id="input"><br />
+    <label asp-for="Author" class="label" for="input">Author</label>
+    <input asp-for="Author" class="input" type="text" id="input"><br />
+    <label asp-for="Price" class="label" for="input">Price</label>
+    <input asp-for="Price" class="input" type="text" id="input"><br />
+    <label asp-for="Description" class="label" for="input">Description</label>
+    <input asp-for="Description" class="input" type="text" id="input"><br />
     <button class="button-27" role="button">Add!</button>
 </form>
